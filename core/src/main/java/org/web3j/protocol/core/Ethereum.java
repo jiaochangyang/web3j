@@ -50,6 +50,7 @@ import org.web3j.protocol.core.methods.response.EthMaxPriorityFeePerGas;
 import org.web3j.protocol.core.methods.response.EthMining;
 import org.web3j.protocol.core.methods.response.EthProtocolVersion;
 import org.web3j.protocol.core.methods.response.EthSign;
+import org.web3j.protocol.core.methods.response.EthSignTransaction;
 import org.web3j.protocol.core.methods.response.EthSubmitHashrate;
 import org.web3j.protocol.core.methods.response.EthSubmitWork;
 import org.web3j.protocol.core.methods.response.EthSyncing;
@@ -141,6 +142,8 @@ public interface Ethereum {
     Request<?, EthGetCode> ethGetCode(String address, DefaultBlockParameter defaultBlockParameter);
 
     Request<?, EthSign> ethSign(String address, String sha3HashOfDataToSign);
+
+    Request<?, EthSignTransaction> ethSignTransaction(org.web3j.protocol.core.methods.request.Transaction transaction);
 
     Request<?, org.web3j.protocol.core.methods.response.EthSendTransaction> ethSendTransaction(
             org.web3j.protocol.core.methods.request.Transaction transaction);
